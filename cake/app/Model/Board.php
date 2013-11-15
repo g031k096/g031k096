@@ -1,5 +1,10 @@
 <?php
 	class Board extends Model{
-		public $name = 'Board';
+		public $name = 'Board';te
+
+		var $validate = array(
+	        'login' => array(
+	        );
+    	);
 	}
 ?>
