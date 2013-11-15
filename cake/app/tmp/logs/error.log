@@ -1,0 +1,396 @@
+2013-10-31 14:26:04 Error: [MissingPluginException] Plugin Debugkit could not be found.
+Exception Attributes: array (
+  'plugin' => 'Debugkit',
+)
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/Config/bootstrap.php(110): CakePlugin::load('Debugkit')
+#1 /home/g031k096/public_html/cake/lib/Cake/Core/Configure.php(94): include('/home/g031k096/...')
+#2 /home/g031k096/public_html/cake/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#3 /home/g031k096/public_html/cake/app/webroot/index.php(92): include('/home/g031k096/...')
+#4 {main}
+2013-11-07 17:45:57 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /~g031k096/cake/App/Controller/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-11-07 17:47:51 Error: [MissingControllerException] Controller class Input.ctpController could not be found.
+Exception Attributes: array (
+  'class' => 'Input.ctpController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/input.ctp
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 18:09:20 Error: [MissingControllerException] Controller class HogeController.phpController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController.phpController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 18:20:19 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 18:22:16 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 18:25:02 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 18:27:58 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 18:28:48 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /~g031k096/cake/App/Controller/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-11-07 18:29:02 Error: [MissingControllerException] Controller class Input.ctpController could not be found.
+Exception Attributes: array (
+  'class' => 'Input.ctpController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/input.ctp
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 19:01:06 Error: [MissingControllerException] Controller class Input.ctpController could not be found.
+Exception Attributes: array (
+  'class' => 'Input.ctpController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/input.ctp
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 19:03:52 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /~g031k096/cake/App/Controller/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-11-07 19:04:58 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 19:06:46 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 19:06:47 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 19:09:06 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:00:32 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:01:29 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /~g031k096/cake/app/Controller/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-11-07 20:02:03 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /~g031k096/cake/App/Controller/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-11-07 20:04:16 Error: [MissingControllerException] Controller class HogeController.phpController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController.phpController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:05:16 Error: [MissingControllerException] Controller class HogeControllerController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeControllerController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/HogeController/index.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:07:26 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:08:23 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:11:14 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:12:38 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:25:03 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/input
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-07 20:28:16 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/input
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 12:48:55 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 13:19:12 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/Hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:12:45 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /~g031k096/cake/App/Controller/HogeController.php
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-11-08 15:13:35 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:13:45 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/index
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:14:05 Error: [MissingControllerException] Controller class ShowController could not be found.
+Exception Attributes: array (
+  'class' => 'ShowController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:14:45 Error: [MissingActionException] Action AppController::show() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'show',
+)
+Request URL: /~g031k096/cake/app/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home/g031k096/public_html/cake/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-11-08 15:14:55 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:15:07 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/Hoge/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:15:42 Error: [MissingControllerException] Controller class ShowController could not be found.
+Exception Attributes: array (
+  'class' => 'ShowController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:15:52 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:19:00 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /~g031k096/cake/hoge
+Stack Trace:
+#0 /home/g031k096/public_html/cake/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-11-08 15:39:29 Error: Fatal Error (1): Call to undefined method HogeController::falsh() in [/home/g031k096/public_html/cake/app/Controller/HogeController.php, line 24]
+2013-11-08 15:39:29 Error: [FatalErrorException] Call to undefined method HogeController::falsh()
+Request URL: /~g031k096/cake/hoge/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/g031k096/...', 24)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/g031k096/...', 24, Array)
+#2 /home/g031k096/public_html/cake/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/g031k096/...', 24, Array)
+#3 /home/g031k096/public_html/cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-08 15:40:29 Error: Fatal Error (1): Call to undefined method HogeController::falsh() in [/home/g031k096/public_html/cake/app/Controller/HogeController.php, line 24]
+2013-11-08 15:40:29 Error: [FatalErrorException] Call to undefined method HogeController::falsh()
+Request URL: /~g031k096/cake/hoge/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/g031k096/...', 24)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/g031k096/...', 24, Array)
+#2 /home/g031k096/public_html/cake/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/g031k096/...', 24, Array)
+#3 /home/g031k096/public_html/cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-08 15:40:32 Error: Fatal Error (1): Call to undefined method HogeController::falsh() in [/home/g031k096/public_html/cake/app/Controller/HogeController.php, line 24]
+2013-11-08 15:40:32 Error: [FatalErrorException] Call to undefined method HogeController::falsh()
+Request URL: /~g031k096/cake/hoge/show
+Stack Trace:
+#0 /home/g031k096/public_html/cake/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/g031k096/...', 24)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/g031k096/...', 24, Array)
+#2 /home/g031k096/public_html/cake/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/g031k096/...', 24, Array)
+#3 /home/g031k096/public_html/cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
