@@ -4,7 +4,8 @@
 基礎1
 [動作ページ](http://49.212.46.130/~g031k096/cake/boards)...[git](https://github.com/g031k096/g031k096/blob/master/cake/app/Controller/BoardsController.php)
 
-[基礎2](http://49.212.46.130/~g031k096/kadai7.php)
+基礎2
+[動作ページ](http://49.212.46.130/~g031k096/kadai7.php)
 
 発展1
 [動作ページ]()...[git]()
@@ -28,4 +29,5 @@
 発展１
 [動作ページ](http://dotinstall.com/users/g031k096)
 
-[発展2](http://49.212.46.130/~g031k096/kadai6.php)
+発展2
+[動作ページ](http://49.212.46.130/~g031k096/kadai6.php)

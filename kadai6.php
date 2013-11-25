@@ -12,5 +12,6 @@
 文字のつけたし<br />
 	var li = $($('&ltli /&gt').text('おはよ').css('color','red');$('.sub_navigation > li:eq(2)').after(li);
 <br /><br />
+<img src="k3.PNG" >
 </body>
 </html>

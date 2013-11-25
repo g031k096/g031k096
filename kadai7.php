@@ -16,5 +16,7 @@ $('img[src="http://liginc.co.jp/wp-content/themes/lig2013/images/common/header_h
 任意のwebページへのリンクを追加<br />
 $('.sitemap_about.sitemap_tile > ul:eq(2) >li > ul').append($("&ltli /&gt").append($("&lta /&gt").attr("href", "https://twitter.com/").text("twitter").css('color','aqua')));
 <br /><br />
+<img src="k.PNG" >
+<img src="k2.PNG">
 </body>
 </html>
