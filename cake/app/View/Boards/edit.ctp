@@ -1,5 +1,7 @@
-<h2>コメント編集画面</h2>
 <?php
+	echo $this->Html->tag('h2','コメント編集画面');
+	echo $this->Html->tag('br');
+
 	if (!empty($data)) { // 最初の画面
 		echo $this->Form->create() ;//フォーム開始
 

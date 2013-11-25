@@ -1,5 +1,5 @@
 <?php
-	if (empty($this->params->data)) {
+	if (empty($this->params->data['Board']['comment'])) {
 		echo '投稿内容';
 		echo $this->Form->create() ;//フォーム開始
 		
