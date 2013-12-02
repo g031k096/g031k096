@@ -3,7 +3,8 @@
 		public $name = 'User';
         public $validate = array(
 			'name' => array(
-				'rule' => 'alphaNumeric',
+				'rule' =>  array('custom', '/^[a-zA-Z]+$/'),//半角英字のみ
+				'rule' => 'isUnique',
 				'required' => true,
 				'alloEmpty' => false,
 				'message' => '半角英字で必ず入力して下さい'

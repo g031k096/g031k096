@@ -24,12 +24,25 @@ class BoardsController extends AppController {
 		);
 
 	public function index(){
-		if(!empty($this->request->data['kensaku'])){
-			$conditions = array("Board.comment LIKE" => $this->request->data['words']);
-			$search = $this->Board->find('first', array('conditions' => $conditions));
+		if(!empty($this->request->data['Board']['words'])){
+			$WORDS = $this->request->data['Board']['words'];
+			$NUM = $this->request->data['Board']['num']+1;
+			$conditions = array('conditions' => array("Board.comment LIKE" => "%$WORDS%"), 'limit' => $NUM);
+			$this->Session->write("conditions", $conditions);
+			$this->paginate = $conditions;
+			$search = $this->paginate('Board');
 			$this->set('data', $search);
 		}else{
-			$this->set('data', $this->Board->find('all'));
+			//$this->set('data', $this->Board->find('all'));
+			if (empty($this->request->params['named']['page'])){
+				$this->Session->delete('conditions');
+			}
+			if (!($this->Session->read('conditions'))){
+				$this->set('data', $this->paginate('Board'));
+			}else{
+				$this->paginate = $this->Session->read('conditions');
+				$this->set('data', $this->paginate('Board'));
+			}
 		}
 	}
 
@@ -57,8 +70,6 @@ class BoardsController extends AppController {
 		$this->request->data['Board']['user_id'] = $this->Auth->user('id');
 		$this->Board->save($this->request->data);
 		$this->redirect('index');
-		//$this->Board->db_connect($this->request->data);
-		//$this->redirect(array("action" => "index"));
 	}
 
 	public function beforeFilter(){//login処理
@@ -85,20 +96,18 @@ class BoardsController extends AppController {
 
     public function useradd(){
         if($this->request->is('post')) {//POST送信なら
-            if($this->User->validates()){//バリデーション
-		        //パスワードとパスチェックの値をハッシュ値変換
-		        $this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
-		        $this->request->data['User']['pass_check'] = AuthComponent::password($this->request->data['User']['pass_check']);
-		        //入力したパスワートとパスワードチェックの値が一致
-		        if($this->request->data['User']['pass_check'] === $this->request->data['User']['password']){
-		        	$this->User->create();//ユーザーの作成
-			    	$mes = ($this->User->save($this->request->data))? '新規ユーザーを追加しました' : '登録できませんでした。やり直して下さい';
-			  		$this->Session->setFlash(__($mes));
-		            $this->redirect(array('action' => 'login'));//リダイレクト
-		        }else{
-		            $this->Session->setFlash(__('パスワード確認の値が一致しません．'));
-		        }
-        	}
+	        //パスワードとパスチェックの値をハッシュ値変換
+	        $this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
+	        $this->request->data['User']['pass_check'] = AuthComponent::password($this->request->data['User']['pass_check']);
+	        //入力したパスワートとパスワードチェックの値が一致
+	        if($this->request->data['User']['pass_check'] === $this->request->data['User']['password']){
+	        	$this->User->create();//ユーザーの作成
+		    	$mes = ($this->User->save($this->request->data))? '新規ユーザーを追加しました' : '登録できませんでした。やり直して下さい';
+		  		$this->Session->setFlash(__($mes));
+	            $this->redirect(array('action' => 'login'));//リダイレクト
+	        }else{
+	            $this->Session->setFlash(__('パスワード確認の値が一致しません．'));
+	        }
         }
     }
 }

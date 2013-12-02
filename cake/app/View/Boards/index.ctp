@@ -1,45 +1,53 @@
 <?php
 		
-	debug($data);
+	//debug($data);
 	echo $this->Form->create();
 	echo '検索ワード';
 	echo $this->Form->text('words');
 	echo $this->Html->tag('br');
 	echo '検索件数';
-	echo $this->Form->text('num');
-	echo $this->Form->submit('検索', array('name' => 'kensaku'));
+	$options = array(1,2,3,4,5,6,7,8,9,10);
+	echo $this->Form->select('num', $options, array('empty' => false));
 	echo $this->Html->tag('br');
-	echo $this->Form->end();
-
-	echo $this->Form->create();
-	echo 'ソート';
-	echo $this->Form->submit('昇順');
-	echo $this->Form->submit('降順');
+	echo $this->Form->end('検索');
 	echo $this->Html->tag('br');
-	echo $this->Form->end();	
 
+	echo 'ソート　';
+	echo $this->Paginator->sort('id', 'ID').'　';//IDでソート
+	echo $this->Paginator->sort('created', 'Created');//時間でソート
+	echo $this->Html->tag('br');
+	echo $this->Html->tag('br');
+
+	echo $this->Html->link('一覧へ戻る', array('action' => 'index')).'　';
+	
 	echo $this->Html->link('投稿する', array('controller' => 'Boards', 'action' => 'create'));
 	echo $this->Html->tag('br');
 
 	foreach ($data as $key => $value) {
-		if(!empty($value["Board"]["comment"])){
-			echo $value["Board"]["id"].' ';
-			echo $value["Board"]["comment"].' ';
-			echo $value["User"]["email"].' ';
-			echo $value["Board"]["created"].' ';
-			if($user["id"] === $value['Board']['user_id']){
-				echo $this->Html->link('編集', array(
-						'action' => 'edit', 
-						$value["Board"]["id"]
-					)).' ';
-				echo $this->Html->link('削除', array(
-						'action' => 'del', 
-						$value["Board"]["id"]
-					));
-			}
-			echo $this->Html->tag('br');
+		echo $value["Board"]["id"].' ';
+		echo '['.$value["User"]["name"].'] ';
+		echo $value["Board"]["comment"].' ';
+		echo $this->Html->tag('br');
+		echo '　　　'.$value["User"]["email"].' ';
+		echo $value["Board"]["created"].' ';
+		if($user["id"] === $value['Board']['user_id']){//ログインしたユーザーの書き込みのみ
+			echo $this->Html->link('編集', array(
+					'action' => 'edit', 
+					$value["Board"]["id"]
+				)).' ';
+			echo $this->Html->link('削除', array(
+					'action' => 'del', 
+					$value["Board"]["id"]
+				));
 		}
+		echo $this->Html->tag('br');
 	}
 
+	echo $this->Paginator->prev(' << ' . __('前へ'), array(), null, array('class' => 'prev disabled'));
+	echo ' '.$this->Paginator->numbers().' ';//ページにジャンプ
+	echo $this->Paginator->next(' >> ' . __('次へ'), array(), null, array('class' => 'next disabled'));
+	echo '   データ数['.$this->Paginator->params()["count"].']';//データ数表示
+
+	echo $this->Html->tag('br');
 	echo $this->Html->link('ログアウト', array('action' => 'logout'));
 ?>
