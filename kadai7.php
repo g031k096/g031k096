@@ -5,7 +5,7 @@
 <body>
 ページ上部の画像変更<br />
    左側(ロゴ部分)には属性セレクタを使わずに変更<br />
-$('.logo img').attr('src','http://www.kotaku.jp/photo/120726judopoke.jpg');
+$('.box_left > .logo > a > img').attr('src','http://www.kotaku.jp/photo/120726judopoke.jpg');
 <br /><br />
 	右側(人物部分)には属性セレクタを使って変更<br />
 $('img[src="http://liginc.co.jp/wp-content/themes/lig2013/images/common/header_hiroyuki2.png"]').attr('src','http://blog-imgs-50.fc2.com/s/a/i/saikyoumoyasi/irubetaru.png');

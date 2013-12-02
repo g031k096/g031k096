@@ -1,12 +1,36 @@
 <?php
 class BoardsController extends AppController {
 	public $name = 'Boards';
-	public $uses = array('Board');
+	public $uses = array('Board', 'User');
 	public $layout = "board_layout";
-//	public $components = array('Debugkit.Toolbar');
+	public $components = array(
+			'DebugKit.Toolbar', //デバッグキット
+			'Auth' => array( //ログイン機能を利用する
+				'authenticate' => array(
+					'Form' => array(
+						'userModel' => 'User',
+						'fields' => array('username' => 'name','password' => 'password')
+					)
+				),
+				//ログイン後の移動先
+				'loginRedirect' => array('controller' => 'boards', 'action' => 'index'),
+				//ログアウト後の移動先
+				'logoutRedirect' => array('controller' => 'boards', 'action' => 'login'),
+				//ログインページのパス
+				'loginAction' => array('controller' => 'boards', 'action' => 'login'),
+				//未ログイン時のメッセージ
+				'authError' => 'あなたのお名前とパスワードを入力して下さい。',
+			)
+		);
 
 	public function index(){
-		$this->set('data', $this->Board->find('all'));
+		if(!empty($this->request->data['kensaku'])){
+			$conditions = array("Board.comment LIKE" => $this->request->data['words']);
+			$search = $this->Board->find('first', array('conditions' => $conditions));
+			$this->set('data', $search);
+		}else{
+			$this->set('data', $this->Board->find('all'));
+		}
 	}
 
 	public function edit($id){
@@ -18,7 +42,7 @@ class BoardsController extends AppController {
 	}
 
 	public function del($id){
-		$this->Board->del($this->Board->findById($id));
+		$this->Board->delete($id);
 		$this->redirect(array("action" => "index"));
 	}
 
@@ -27,12 +51,55 @@ class BoardsController extends AppController {
 			$com = $this->request->data;
 			$this->set('com', $com);//ビューに値を受け渡す
 		}
-	
 	}
 
 	public function creatable(){
-		$this->Board->db_connect($this->request->data);
-		$this->redirect(array("action" => "index"));
+		$this->request->data['Board']['user_id'] = $this->Auth->user('id');
+		$this->Board->save($this->request->data);
+		$this->redirect('index');
+		//$this->Board->db_connect($this->request->data);
+		//$this->redirect(array("action" => "index"));
 	}
+
+	public function beforeFilter(){//login処理
+		$this->Auth->allow('login', 'logout', 'useradd');//loginしなくてもいいところ
+		$this->set('user', $this->Auth->user());//???
+	}
+
+	public function login(){
+		if($this->request->is('post')){//POST送信したら
+			if($this->Auth->login()){//login成功したら
+				return $this->redirect($this->Auth->redirect());//loginページへ移動
+			}else{
+				$this->Session->setFlash(__('ユーザ名もしくはパスワードが違います'), 'default', array(), 'auth');//???
+			}
+		}
+	}
+
+	public function logout(){
+		$this->Auth->logout();
+		$this->Session->destroy();//sessionをリセット
+		$this->Session->setFlash(__('ログアウトしました'));
+		$this->redirect(array('action' => 'login'));
+	}
+
+    public function useradd(){
+        if($this->request->is('post')) {//POST送信なら
+            if($this->User->validates()){//バリデーション
+		        //パスワードとパスチェックの値をハッシュ値変換
+		        $this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
+		        $this->request->data['User']['pass_check'] = AuthComponent::password($this->request->data['User']['pass_check']);
+		        //入力したパスワートとパスワードチェックの値が一致
+		        if($this->request->data['User']['pass_check'] === $this->request->data['User']['password']){
+		        	$this->User->create();//ユーザーの作成
+			    	$mes = ($this->User->save($this->request->data))? '新規ユーザーを追加しました' : '登録できませんでした。やり直して下さい';
+			  		$this->Session->setFlash(__($mes));
+		            $this->redirect(array('action' => 'login'));//リダイレクト
+		        }else{
+		            $this->Session->setFlash(__('パスワード確認の値が一致しません．'));
+		        }
+        	}
+        }
+    }
 }
 ?>

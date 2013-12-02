@@ -2,6 +2,12 @@
 class SignUp extends Model{
 	public $name = 'SignUp';
 	public $useTable = false;
+	
+	// var $validate = array(
+ //        'login' => array(
+ //        );
+	// );
+
 
 	public function judge($info){
 		if(!empty($info['Touroku'])){

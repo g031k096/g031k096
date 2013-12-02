@@ -22,7 +22,7 @@
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
+		<div id="footer" >
 		</div>
 	</div>
 </body>
