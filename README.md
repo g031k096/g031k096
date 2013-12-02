@@ -4,7 +4,7 @@
 基礎1
 基礎2
 発展1
-[動作ページ](http://49.212.46.130/~g031k096/cake/boards)...[git]()
+[動作ページ](http://49.212.46.130/~g031k096/cake/boards)...[git](https://github.com/g031k096/g031k096/blob/master/cake/app/Controller/BoardsController.php)
 
 --------------------------------------------
 第7回課題
