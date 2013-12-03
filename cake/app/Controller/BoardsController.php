@@ -24,9 +24,9 @@ class BoardsController extends AppController {
 		);
 
 	public function index(){
-		if(!empty($this->request->data['Board']['words'])){
-			$WORDS = $this->request->data['Board']['words'];
-			$NUM = $this->request->data['Board']['num']+1;
+		if(!empty($this->request->query['words'])){
+			$WORDS = $this->request->query['words'];
+			$NUM = $this->request->query['num']+1;
 			$conditions = array('conditions' => array("Board.comment LIKE" => "%$WORDS%"), 'limit' => $NUM);
 			$this->Session->write("conditions", $conditions);
 			$this->paginate = $conditions;
@@ -34,7 +34,7 @@ class BoardsController extends AppController {
 			$this->set('data', $search);
 		}else{
 			//$this->set('data', $this->Board->find('all'));
-			if (empty($this->request->params['named']['page'])){
+			if (empty($this->request->query['words'])){
 				$this->Session->delete('conditions');
 			}
 			if (!($this->Session->read('conditions'))){

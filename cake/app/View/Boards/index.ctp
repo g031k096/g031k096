@@ -1,7 +1,7 @@
 <?php
 		
 	//debug($data);
-	echo $this->Form->create();
+	echo $this->Form->create(array('type' => 'get'));
 	echo '検索ワード';
 	echo $this->Form->text('words');
 	echo $this->Html->tag('br');
@@ -13,12 +13,10 @@
 	echo $this->Html->tag('br');
 
 	echo 'ソート　';
-	echo $this->Paginator->sort('id', 'ID').'　';//IDでソート
-	echo $this->Paginator->sort('created', 'Created');//時間でソート
+	echo $this->Paginator->sort('created', 'Created', array('direction' => 'desc'));//時間でソート
 	echo $this->Html->tag('br');
 	echo $this->Html->tag('br');
-
-	echo $this->Html->link('一覧へ戻る', array('action' => 'index')).'　';
+	echo $this->Html->link('TOPへ', array('action' => 'index')).'　';
 	
 	echo $this->Html->link('投稿する', array('controller' => 'Boards', 'action' => 'create'));
 	echo $this->Html->tag('br');
@@ -30,7 +28,7 @@
 		echo $this->Html->tag('br');
 		echo '　　　'.$value["User"]["email"].' ';
 		echo $value["Board"]["created"].' ';
-		if($user["id"] === $value['Board']['user_id']){//ログインしたユーザーの書き込みのみ
+		if($user["id"] === $value['Board']['user_id']){//ログインしたユーザーの書き込み
 			echo $this->Html->link('編集', array(
 					'action' => 'edit', 
 					$value["Board"]["id"]
@@ -44,9 +42,9 @@
 	}
 
 	echo $this->Paginator->prev(' << ' . __('前へ'), array(), null, array('class' => 'prev disabled'));
-	echo ' '.$this->Paginator->numbers().' ';//ページにジャンプ
+	echo ' '.$this->Paginator->numbers().' ';
 	echo $this->Paginator->next(' >> ' . __('次へ'), array(), null, array('class' => 'next disabled'));
-	echo '   データ数['.$this->Paginator->params()["count"].']';//データ数表示
+	echo '   データ数['.$this->Paginator->params()["count"].']';
 
 	echo $this->Html->tag('br');
 	echo $this->Html->link('ログアウト', array('action' => 'logout'));
