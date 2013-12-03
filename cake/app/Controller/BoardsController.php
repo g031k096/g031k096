@@ -96,15 +96,18 @@ class BoardsController extends AppController {
 
     public function useradd(){
         if($this->request->is('post')) {//POST送信なら
-	        //パスワードとパスチェックの値をハッシュ値変換
-	        $this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
-	        $this->request->data['User']['pass_check'] = AuthComponent::password($this->request->data['User']['pass_check']);
 	        //入力したパスワートとパスワードチェックの値が一致
 	        if($this->request->data['User']['pass_check'] === $this->request->data['User']['password']){
-	        	$this->User->create();//ユーザーの作成
-		    	$mes = ($this->User->save($this->request->data))? '新規ユーザーを追加しました' : '登録できませんでした。やり直して下さい';
-		  		$this->Session->setFlash(__($mes));
-	            $this->redirect(array('action' => 'login'));//リダイレクト
+	        	$this->User->set($this->request->data);
+            	if($this->User->validates()){ //エラーがなければ
+            		//パスワードとパスチェックの値をハッシュ値変換
+		       		$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
+		        	$this->request->data['User']['pass_check'] = AuthComponent::password($this->request->data['User']['pass_check']);
+		        	$this->User->create();//ユーザーの作成
+		    		$mes = ($this->User->save($this->request->data))? '新規ユーザーを追加しました' : '登録できませんでした。やり直して下さい';
+		  			$this->Session->setFlash(__($mes));
+	       		    $this->redirect(array('action' => 'login'));//リダイレクト
+	       		}
 	        }else{
 	            $this->Session->setFlash(__('パスワード確認の値が一致しません．'));
 	        }
