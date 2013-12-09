@@ -86,7 +86,7 @@ class BoardsController extends AppController {
 			if($this->Auth->login()){//login成功したら
 				return $this->redirect($this->Auth->redirect());//loginページへ移動
 			}else{
-				$this->Session->setFlash(__('ユーザ名もしくはパスワードが違います'), 'default', array(), 'auth');//???
+				$this->Session->setFlash(__('ユーザ名もしくはパスワードが違います'), 'default', array(), 'auth');
 			}
 		}
 	}

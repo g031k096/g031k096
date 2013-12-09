@@ -5,7 +5,7 @@
 		public $uses = array('NewUser'); //Userモデルを追加
 		/****認証周り*****/
 		public $components = array(
-			'DebugKit.Toolbar', //デバッグきっと
+			'DebugKit.Toolbar', //デバッグキット
 			'TwitterKit.Twitter', //twitter
 			'Auth' => array( //ログイン機能を利用する
 				'authenticate' => array(
@@ -53,7 +53,6 @@
 	        $data['User'] = $this->NewUser->signin($token); //ユーザ登録
 	        $data = $this->NewUser->find('first', array('conditions' => array("name" => $data['User']['name']), "password" => $data['User']['password']));
 	        $this->Auth->login($data['NewUser']); //CakePHPのAuthログイン処理
-	        //$this->redirect(array("action" => "login", $data));
 	        $this->redirect($this->Auth->loginRedirect); //ログイン後画面へリダイレクト
     	}
 
