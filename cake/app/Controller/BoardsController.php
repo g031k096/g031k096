@@ -23,7 +23,7 @@ class BoardsController extends AppController {
 			)
 		);
 	public $paginate = array(
-      		'limit' => 10,
+			'limit' => 10,
         	'order' => array('Board.id' => 'desc')
  	    );
 
