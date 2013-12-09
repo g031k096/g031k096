@@ -11,7 +11,6 @@
 		echo $this->Form->create(array(
 			'action' => 'creatable'
 		)) ;//フォーム開始
-
 		echo $this->Form->hidden("comment", array("value" => $com["Board"]["comment"]));
 		echo $this->Html->tag('h2',$com["Board"]["comment"]);
 		echo $this->Html->tag('br');

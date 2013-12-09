@@ -5,6 +5,13 @@
 		echo $this->Form->input('User.name', array('label' => 'ユーザー名'));
 		echo $this->Form->input('User.password', array('label' => 'パスワード'));
 		echo $this->Form->end('ログイン');
+		echo $this->Form->create('TwLogins', array('action'=>'twitter_login'));
+    	echo $this->Form->end(__('Twitter で Login'));
+    	echo $this->Form->create('Fbconnects', array('action'=>'facebook'));
+    	echo $this->Form->end(__('Facebook で Login'));
+		echo $this->Html->tag('br');
+		echo $this->Html->tag('br');
+		
 	?>
 	<a href="useradd" id="switch" class="label btn-primary">新規登録</a>
 </div>

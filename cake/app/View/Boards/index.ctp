@@ -13,7 +13,7 @@
 	echo $this->Html->tag('br');
 
 	echo 'ソート　';
-	echo $this->Paginator->sort('created', 'Created', array('direction' => 'desc'));//時間でソート
+	echo $this->Paginator->sort('created', 'Created', array('direction' => 'asc'));//時間でソート
 	echo $this->Html->tag('br');
 	echo $this->Html->tag('br');
 	echo $this->Html->link('TOPへ', array('action' => 'index')).'　';
@@ -21,6 +21,7 @@
 	echo $this->Html->link('投稿する', array('controller' => 'Boards', 'action' => 'create'));
 	echo $this->Html->tag('br');
 
+	
 	foreach ($data as $key => $value) {
 		echo $value["Board"]["id"].' ';
 		echo '['.$value["User"]["name"].'] ';
@@ -28,15 +29,17 @@
 		echo $this->Html->tag('br');
 		echo '　　　'.$value["User"]["email"].' ';
 		echo $value["Board"]["created"].' ';
-		if($user["id"] === $value['Board']['user_id']){//ログインしたユーザーの書き込み
-			echo $this->Html->link('編集', array(
-					'action' => 'edit', 
-					$value["Board"]["id"]
-				)).' ';
-			echo $this->Html->link('削除', array(
-					'action' => 'del', 
-					$value["Board"]["id"]
-				));
+		if(!empty($user["id"])){
+			if($user["id"] === $value['Board']['user_id']){//ログインしたユーザーの書き込み
+				echo $this->Html->link('編集', array(
+						'action' => 'edit', 
+						$value["Board"]["id"]
+					)).' ';
+				echo $this->Html->link('削除', array(
+						'action' => 'del', 
+						$value["Board"]["id"]
+					));
+			}
 		}
 		echo $this->Html->tag('br');
 	}

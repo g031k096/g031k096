@@ -1,7 +1,7 @@
 <?php
 class BoardsController extends AppController {
 	public $name = 'Boards';
-	public $uses = array('Board', 'User');
+	public $uses = array('Board', 'User', 'New_user');
 	public $layout = "board_layout";
 	public $components = array(
 			'DebugKit.Toolbar', //デバッグキット
@@ -22,6 +22,10 @@ class BoardsController extends AppController {
 				'authError' => 'あなたのお名前とパスワードを入力して下さい。',
 			)
 		);
+	public $paginate = array(
+      		'limit' => 10,
+        	'order' => array('Board.id' => 'desc')
+ 	    );
 
 	public function index(){
 		if(!empty($this->request->query['words'])){
@@ -74,7 +78,7 @@ class BoardsController extends AppController {
 
 	public function beforeFilter(){//login処理
 		$this->Auth->allow('login', 'logout', 'useradd');//loginしなくてもいいところ
-		$this->set('user', $this->Auth->user());//???
+		$this->set('user', $this->Auth->user());//
 	}
 
 	public function login(){
@@ -101,12 +105,12 @@ class BoardsController extends AppController {
 	        	$this->User->set($this->request->data);
             	if($this->User->validates()){ //エラーがなければ
             		//パスワードとパスチェックの値をハッシュ値変換
-		       		$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
-		        	$this->request->data['User']['pass_check'] = AuthComponent::password($this->request->data['User']['pass_check']);
-		        	$this->User->create();//ユーザーの作成
+					$this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
+			    	$this->request->data['User']['pass_check'] = AuthComponent::password($this->request->data['User']['pass_check']);
+			    	$this->User->create();//ユーザーの作成
 		    		$mes = ($this->User->save($this->request->data))? '新規ユーザーを追加しました' : '登録できませんでした。やり直して下さい';
-		  			$this->Session->setFlash(__($mes));
-	       		    $this->redirect(array('action' => 'login'));//リダイレクト
+					$this->Session->setFlash(__($mes));
+				    $this->redirect(array('action' => 'login'));//リダイレクト
 	       		}
 	        }else{
 	            $this->Session->setFlash(__('パスワード確認の値が一致しません．'));
