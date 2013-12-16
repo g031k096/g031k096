@@ -1,8 +1,8 @@
 <?php
-class BoardsController extends AppController {
-	public $name = 'Boards';
+class MobileBoardsController extends AppController {
+	public $name = 'MobileBoards';
 	public $uses = array('Board', 'User');
-	public $layout = "board_layout";
+	public $layout = "M_boards";
 	public $components = array(
 			'DebugKit.Toolbar', //デバッグキット
 			'Auth' => array( //ログイン機能を利用する
@@ -13,11 +13,11 @@ class BoardsController extends AppController {
 					)
 				),
 				//ログイン後の移動先
-				'loginRedirect' => array('controller' => 'boards', 'action' => 'index'),
+				'loginRedirect' => array('controller' => 'MobileBoards', 'action' => 'index'),
 				//ログアウト後の移動先
-				'logoutRedirect' => array('controller' => 'boards', 'action' => 'login'),
+				'logoutRedirect' => array('controller' => 'MobileBoards', 'action' => 'login'),
 				//ログインページのパス
-				'loginAction' => array('controller' => 'boards', 'action' => 'login'),
+				'loginAction' => array('controller' => 'MobileBoards', 'action' => 'login'),
 				//未ログイン時のメッセージ
 				'authError' => 'あなたのお名前とパスワードを入力して下さい。',
 			)
@@ -77,12 +77,6 @@ class BoardsController extends AppController {
 	}
 
 	public function beforeFilter(){//login処理
-		//モバイルからのリクエストの場合
-		if($this->request->is('mobile')){
-			//テーマをJqm、レイアウトをjqmに指定します。
-			$this->theme = 'M_boards';
-			$this->layout = 'M_boards';
-		}
 		$this->Auth->allow('login', 'logout', 'useradd');//loginしなくてもいいところ
 		$this->set('user', $this->Auth->user());//
 	}

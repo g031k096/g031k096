@@ -21,7 +21,6 @@
 	echo $this->Html->link('投稿する', array('controller' => 'Boards', 'action' => 'create'));
 	echo $this->Html->tag('br');
 
-	
 	foreach ($data as $key => $value) {
 		echo $value["Board"]["id"].' ';
 		echo '['.$value["User"]["name"].'] ';
